@@ -7,10 +7,15 @@ const cors = require("cors");
 const connectDB = require('./configs/db.js');
 
   
-// setup Middleware//
+// setup Middleware
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+
+// use files from server
+const path = require("path");
+app.use('/uploads', express.static(path.join(__dirname, 'data', 'uploads')));
 
 
 // Routes

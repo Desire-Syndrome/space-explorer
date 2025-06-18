@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
 	password: { type: String, required: true },
 	bookmarks: [
 		{
-			type: { type: String, enum: ['apod', 'mars', 'epic', 'neo', 'library'], required: true },
+			type: { type: String, enum: ['apod', 'mars', 'epic'], required: true },
 			data: { type: mongoose.Schema.Types.Mixed, required: true },
 		}
 	]

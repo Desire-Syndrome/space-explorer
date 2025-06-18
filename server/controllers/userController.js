@@ -55,23 +55,25 @@ const userLogin = AsyncHandler(async (req, res) => {
   }
 });
 
-const getUserData = AsyncHandler(async (req, res) => {
-  const user = req.account;
-  return res.status(200).json({
-    message: "User profile received",
-    user
-  });
-});
-
 
 const updateUser = AsyncHandler(async (req, res) => {
-  const user = req.account;
-  const { name, email, password } = req.body;
+  const { name, email, oldPassword, newPassword } = req.body;
+  const user = await User.findById(req.account._id);
 
   if (user) {
     user.name = name || user.name;
     user.email = email || user.email;
-    user.password = password || user.password;
+    if (newPassword) {
+      if (!oldPassword) {
+        return res.status(400).json({ message: "Please provide old password." });
+      }
+      const isMatch = await user.matchPassword(oldPassword);
+      if (!isMatch) {
+        return res.status(401).json({ message: "Old password is incorrect." });
+      }
+      user.password = newPassword;
+    }
+
     if (req.files?.avatar && req.files.avatar.length > 0) {
       if (user.image) {
         await deleteUploadedFile(user.image);
@@ -96,7 +98,7 @@ const updateUser = AsyncHandler(async (req, res) => {
 
 
 const deleteUser = AsyncHandler(async (req, res) => {
-  const user = req.account;
+  const user = await User.findById(req.account._id);
 
   if (user) {
     if (user.image) { await deleteUploadedFile(user.image); }
@@ -110,4 +112,4 @@ const deleteUser = AsyncHandler(async (req, res) => {
 });
 
 
-module.exports = { userRegistration, userLogin, getUserData, updateUser, deleteUser };
+module.exports = { userRegistration, userLogin, updateUser, deleteUser };
