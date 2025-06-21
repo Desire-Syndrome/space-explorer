@@ -64,7 +64,7 @@ const Header = () => {
 		}
 	};
 
-	
+
 	const closePopup = () => {
 		setAvatar(null); setName(""); setEmail(""); setPassword("");
 		setPopupState("Login"); setShowPopup(false);
@@ -98,11 +98,6 @@ const Header = () => {
 							</Link>
 						</li>
 						<li className='max-[500px]:pb-1'>
-							<Link to={'/earth-from-space'} className='px-1 md:px-2 mx-2 hover:opacity-75 transition duration-300 ease-in-out'>
-								Earth from Space
-							</Link>
-						</li>
-						<li className='max-[500px]:pb-1'>
 							<Link to={'/picture-of-the-day'} className='px-1 md:px-2 mx-2 hover:opacity-75 transition duration-300 ease-in-out'>
 								Picture of the Day
 							</Link>
@@ -110,6 +105,11 @@ const Header = () => {
 						<li className='max-[500px]:pb-1'>
 							<Link to={'/rover-photos'} className='px-1 md:px-2 mx-2 hover:opacity-75 transition duration-300 ease-in-out'>
 								Rover Photos
+							</Link>
+						</li>
+						<li className='max-[500px]:pb-1'>
+							<Link to={'/earth-from-space'} className='px-1 md:px-2 mx-2 hover:opacity-75 transition duration-300 ease-in-out'>
+								Earth from Space
 							</Link>
 						</li>
 					</ul>

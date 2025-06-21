@@ -30,7 +30,7 @@ function NasaEPIC() {
 
     useEffect(() => {
       if (userInfo) {
-        dispatch(getBookmarksAction("epic"));
+        dispatch(getBookmarksAction());
       }
     }, [dispatch, userInfo]);
 

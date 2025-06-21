@@ -36,7 +36,7 @@ function NasaRovers() {
 
   useEffect(() => {
     if (userInfo) {
-      dispatch(getBookmarksAction("mars"));
+      dispatch(getBookmarksAction());
     }
   }, [dispatch, userInfo]);
 

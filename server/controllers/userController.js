@@ -17,6 +17,9 @@ const userRegistration = AsyncHandler(async (req, res) => {
   if (existUser) {
     return res.status(400).json({ message: "User already exists." });
   }
+  if (password.length < 6) {
+    return res.status(400).json({ message: "Password must be at least 6 characters long." });
+  }
   let avatarPath = null;
   if (req.files?.avatar && req.files.avatar.length > 0) {
     avatarPath = await saveUploadedFile(req.files.avatar[0], "avatar");
@@ -66,6 +69,9 @@ const updateUser = AsyncHandler(async (req, res) => {
     if (newPassword) {
       if (!oldPassword) {
         return res.status(400).json({ message: "Please provide old password." });
+      }
+      if (newPassword.length < 6) {
+        return res.status(400).json({ message: "Password must be at least 6 characters long." });
       }
       const isMatch = await user.matchPassword(oldPassword);
       if (!isMatch) {

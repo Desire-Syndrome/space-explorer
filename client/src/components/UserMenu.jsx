@@ -33,7 +33,7 @@ function UserMenu() {
 							</Link>
 						</li>
 						<li>
-							<Link to={'/user/bookmarks/earth-from-space'} className='py-1 px-2 cursor-pointer flex items-center gap-2 hover:bg-blue-100 transition duration-300 ease-in-out'>
+							<Link to={'/user/bookmarks/picture-of-the-day'} className='py-1 px-2 cursor-pointer flex items-center gap-2 hover:bg-blue-100 transition duration-300 ease-in-out'>
 								<img src={assetsImages.bookmark} className='w-4 h-4' alt="icon" />My Bookmarks
 							</Link>
 						</li>

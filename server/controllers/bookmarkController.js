@@ -29,14 +29,10 @@ const addBookmark = AsyncHandler(async (req, res) => {
 
 const getBookmarks = AsyncHandler(async (req, res) => {
   const user = req.account;
-  const { type } = req.query;
-
-  const bookmarks = type
-    ? user.bookmarks.filter((b) => b.type === type)
-    : user.bookmarks;
+  
   return res.status(200).json({
     message: "Bookmarks received.",
-    bookmarks
+    bookmarks: user.bookmarks
   });
 });
 

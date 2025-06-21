@@ -26,7 +26,7 @@ function NasaAPOD() {
 
   useEffect(() => {
     if (userInfo) {
-      dispatch(getBookmarksAction("apod"));
+      dispatch(getBookmarksAction());
     }
   }, [dispatch, userInfo]);
 
