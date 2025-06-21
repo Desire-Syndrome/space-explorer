@@ -12,10 +12,17 @@ const persistConfig = {
 import {
 	userRegisterReducer, userLoginReducer, userUpdateReducer, userRemoveReducer
 } from "./reducers/UserReducer";
-
+import {
+	nasaEpicReducer, nasaApodReducer, nasaRoversReducer
+} from "./reducers/NasaReducer";
+import {
+	bookmarkAddReducer, bookmarkRemoveReducer, bookmarksGetReducer
+} from "./reducers/BookmarkReducer";
 
 const rootReducer = combineReducers({ 
-	 userRegisterReducer, userLoginReducer, userUpdateReducer, userRemoveReducer
+	 userRegisterReducer, userLoginReducer, userUpdateReducer, userRemoveReducer,
+	 nasaEpicReducer, nasaApodReducer, nasaRoversReducer,
+	 bookmarkAddReducer, bookmarkRemoveReducer, bookmarksGetReducer
 });
 
 

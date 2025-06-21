@@ -23,6 +23,8 @@ const userRoutes = require( "./routes/userRoutes.js");
 app.use('/api/user', userRoutes);
 const bookmarkRoutes = require( "./routes/bookmarkRoutes.js");
 app.use('/api/bookmarks', bookmarkRoutes);
+const nasaRoutes = require( "./routes/nasaRoutes.js");
+app.use('/api/nasa', nasaRoutes);
 
 
 // Setup and Run Server

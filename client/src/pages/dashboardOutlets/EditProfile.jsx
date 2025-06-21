@@ -91,14 +91,11 @@ const EditProfile = () => {
 	return (<>
 
 		<form onSubmit={userUpdateHandler} className='container py-8 flex flex-col w-full items-start gap-3'>
-
 			<div className='w-full max-w-xl py-4 bg-slate-200 rounded-lg'>
 				<label htmlFor="image">
-					<img src={
-						previewAvatar ? previewAvatar : userInfo.image ? `${BASE_URL}${userInfo.image}` : assetsImages.upload_area
-					} alt="Upload avatar" className="w-24 h-24 ms-5 rounded-full inline-block cursor-pointer" />
+					<img src={previewAvatar ? previewAvatar : userInfo.image ? `${BASE_URL}${userInfo.image}` : assetsImages.upload_area} alt="Upload avatar" className="w-24 h-24 ms-5 rounded-full object-cover inline-block cursor-pointer" />
 					<input onChange={(e) => { avatarChange(e) }} type="file" id='image' hidden />
-					<p className='ms-5 px-2 py-5 cursor-pointer inline-block'>Change photo</p>
+					<p className='ms-5 px-2 py-5 font-medium cursor-pointer inline-block'>Change photo</p>
 				</label>
 			</div>
 
@@ -130,10 +127,9 @@ const EditProfile = () => {
 			</div>
 
 			<div className='mt-3 '>
-				<button type="submit" className="max-[500px]:px-2 max-[500px]:text-xs bg-blue-600 rounded px-8 py-3 text-white text-sm lg:text-base hover:bg-blue-500 transition duration-300 ease-in-out" disabled={updateLoading}>Update Profile</button>
-				<button onClick={userRemoveHandler} type="button" className="max-[500px]:px-2 max-[500px]:text-xs max-[500px]:ms-2  ms-5 bg-red-600 rounded px-8 py-3 text-white text-sm lg:text-base hover:bg-red-500 transition duration-300 ease-in-out">Delete Profile</button>
+				<button type="submit" className="max-[500px]:px-2 max-[500px]:text-xs font-medium bg-blue-600 rounded px-8 py-3 text-white text-sm lg:text-base hover:bg-blue-500 transition duration-300 ease-in-out" disabled={updateLoading}>Update Profile</button>
+				<button onClick={userRemoveHandler} type="button" className="max-[500px]:px-2 max-[500px]:text-xs font-medium max-[500px]:ms-2  ms-5 rounded px-8 py-3 text-gray-800 text-sm lg:text-base bg-slate-200 hover:bg-gray-300 transition duration-300 ease-in-out">Delete Profile</button>
 			</div>
-
 		</form>
 
 
@@ -145,14 +141,14 @@ const EditProfile = () => {
 					<div className="px-6 py-4"><p className="text-gray-700">{modalMessage}</p></div>
 					<div className="px-6 py-4 border-t border-gray-200 flex justify-end space-x-3">
 						{!removeSuccess ? (<>
-							<button onClick={() => { dispatch({ type: "USER_REMOVE_RESET" }); setModalVisible(false); }} type="button" className="bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium px-4 py-2 rounded" >
+							<button onClick={() => { dispatch({ type: "USER_REMOVE_RESET" }); setModalVisible(false); }} type="button" className="text-sm font-medium px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 text-gray-800 transition duration-300 ease-in-out" >
 								Cancel
 							</button>
-							<button onClick={confirmUserRemoveHandler} type="button" className="bg-red-600 hover:bg-red-700 text-white text-sm font-medium px-4 py-2 rounded">
+							<button onClick={confirmUserRemoveHandler} type="button" className="text-white text-sm font-medium px-4 py-2 rounded bg-blue-600 hover:bg-blue-500 transition duration-300 ease-in-out">
 								Yes, Delete
 							</button>
 						</>) : (
-							<button onClick={() => { dispatch({ type: "USER_LOGOUT" }); dispatch({ type: "USER_REMOVE_RESET" }); setModalVisible(false); }} type="button" className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded">
+							<button onClick={() => { dispatch({ type: "USER_LOGOUT" }); dispatch({ type: "USER_REMOVE_RESET" }); setModalVisible(false); }} type="button" className="text-white text-sm font-medium px-4 py-2 rounded bg-blue-600 hover:bg-blue-500 transition duration-300 ease-in-out">
 								OK
 							</button>
 						)}

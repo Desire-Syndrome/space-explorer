@@ -85,7 +85,7 @@ const Header = () => {
 					{userInfo ? (
 						<UserMenu />
 					) : (
-						<button onClick={() => setShowPopup(true)} className='bg-blue-600 md:text-sm text-xs text-white px-6 py-2 rounded-full hover:bg-blue-500 transition duration-300 ease-in-out'>User Login</button>
+						<button onClick={() => setShowPopup(true)} className='bg-blue-600 md:text-sm text-xs font-medium text-white px-6 py-2 rounded-full hover:bg-blue-500 transition duration-300 ease-in-out'>User Login</button>
 					)}
 				</div>
 
@@ -120,11 +120,11 @@ const Header = () => {
 
 
 		{showPopup && (
-			<div className="fixed inset-0 bg-white bg-opacity-70 flex items-center justify-center z-100">
+			<div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
 				<div onClick={closePopup} className='fixed inset-0 z-150'></div>
 				<div className="bg-white rounded-lg shadow p-6 w-80 lg:w-96 relative border-blue-600 border-opacity-70 border-2 z-200">
 					<button className="absolute top-2 right-3 text-gray-500" onClick={closePopup}>✕</button>
-					<h2 className="text-lg text-center font-semibold mb-4">User {popupState}</h2>
+					<h2 className="text-lg text-center font-medium mb-4">User {popupState}</h2>
 					<form onSubmit={handleSubmit}>
 
 						{popupState === 'Registration' && (<>
@@ -151,7 +151,7 @@ const Header = () => {
 						</div>
 
 						{popupState === 'Login' ? (<>
-							<button type='submit' className='bg-blue-600 w-full text-white rounded-full py-2 mt-3 hover:bg-blue-500 transition duration-300 ease-in-out' disabled={loginLoading}>
+							<button type='submit' className='bg-blue-600 w-full text-white font-medium rounded-full py-2 mt-3 hover:bg-blue-500 transition duration-300 ease-in-out' disabled={loginLoading}>
 								{loginLoading ? "Loading..." : "Login"}
 							</button>
 							{errorMessage && (
@@ -161,10 +161,10 @@ const Header = () => {
 							)}
 							<p className='text-center text-sm mt-5'>
 								Don’t have an account?
-								<span onClick={() => setPopupState("Registration")} className='text-blue-600 cursor-pointer ms-2'>Registration</span>
+								<span onClick={() => setPopupState("Registration")} className='text-blue-600 font-medium cursor-pointer ms-2'>Registration</span>
 							</p>
 						</>) : (<>
-							<button type="submit" className="bg-blue-600 w-full text-white rounded-full py-2 mt-3 hover:bg-blue-500 transition duration-300 ease-in-out" disabled={registerLoading}>
+							<button type="submit" className="bg-blue-600 w-full font-medium text-white rounded-full py-2 mt-3 hover:bg-blue-500 transition duration-300 ease-in-out" disabled={registerLoading}>
 								{registerLoading ? "Loading..." : "Submit"}
 							</button>
 							{errorMessage && (
@@ -174,7 +174,7 @@ const Header = () => {
 							)}
 							<p className='text-center text-sm mt-5'>
 								Already have an account?
-								<span onClick={() => setPopupState("Login")} className='text-blue-600 cursor-pointer ms-2 '>Login</span>
+								<span onClick={() => setPopupState("Login")} className='text-blue-600 font-medium cursor-pointer ms-2 '>Login</span>
 							</p>
 						</>
 						)}

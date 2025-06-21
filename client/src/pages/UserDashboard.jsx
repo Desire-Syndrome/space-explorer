@@ -15,6 +15,7 @@ const UserDashboard = () => {
 
 	const logoutHandler = () => {
 		dispatch(userLogoutAction());
+		dispatch({ type: "BOOKMARK_GET_RESET" });
 	}
 
 	
@@ -34,7 +35,7 @@ const UserDashboard = () => {
 
 			<div className='flex items-start'>
 
-				<div className=' border-r-2 max-w-1/4 border-b-2 md:border-hidden'>
+				<div className='border-r-2 max-w-1/4 border-b-2 md:border-hidden'>
 					<ul className='flex flex-col items-start pt-5 pb-2 text-gray-800 text-sm lg:text-base'>
 						<li className='w-full'>
 							<NavLink to={'/'} className='flex items-center p-3 md:px-6 gap-2 w-full'>

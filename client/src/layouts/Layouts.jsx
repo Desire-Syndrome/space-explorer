@@ -6,7 +6,7 @@ function Layouts({ children }) {
   return (<>
 
     <Header />
-      <main>{children}</main>
+      <main className="min-h-screen w-full">{children}</main>
     <Footer />
     
   </>);

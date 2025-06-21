@@ -15,6 +15,7 @@ function UserMenu() {
 
 	const logoutHandler = () => {
 		dispatch(userLogoutAction());
+		dispatch({ type: "BOOKMARK_GET_RESET" });
 	}
 
 
@@ -23,7 +24,7 @@ function UserMenu() {
 		<div className='flex items-center gap-3'>
 			<p className='text-sm md:text-base'>Welcome, {userInfo.name.length > 10 ? `${userInfo.name.slice(0, 10)}...` : userInfo.name}</p>
 			<div className='relative group'>
-				<img src={userInfo.image ? `${BASE_URL}${userInfo.image}` : assetsImages.upload_area} className='w-8 h-8 border rounded-full' alt="Company Logo" />
+				<img src={userInfo.image ? `${BASE_URL}${userInfo.image}` : assetsImages.upload_area} className='w-8 h-8 border object-cover rounded-full' alt="Company Logo" />
 				<div className='absolute hidden group-hover:block top-0 right-0 z-10 text-black rounded pt-12'>
 					<ul className='list-none m-0 p-2 bg-white rounded-md border text-sm w-max'>
 						<li>

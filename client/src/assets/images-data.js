@@ -8,6 +8,9 @@ import profile_img from "./images/profile_img.png";
 import setting from "./images/setting.png";
 import exit from "./images/exit.png";
 import bookmark from "./images/bookmark.png";
+import loading from "./images/loading.gif";
+import loadingImage from "./images/loadingImage.jpg";
+
 
 export const assetsImages = {
     logo,
@@ -19,5 +22,7 @@ export const assetsImages = {
     lock_icon,
     person_icon,
     upload_area,
-    profile_img
+    profile_img,
+    loading,
+    loadingImage,
 }

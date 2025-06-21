@@ -8,9 +8,11 @@ const addBookmark = AsyncHandler(async (req, res) => {
   if (!type || !data) {
     return res.status(400).json({ message: "Missing type or data." });
   }
+
   const isDuplicate = user.bookmarks.some(
-    (bookmark) => bookmark.type === type && (bookmark.data?.url === data?.url || bookmark.data?.id === data?.id)
+    (bookmark) => bookmark.type === type &&  bookmark.data.id.toString()  === data.id
   );
+
   if (isDuplicate) {
     return res.status(409).json({ message: "This bookmark already exists." });
   }
@@ -19,9 +21,10 @@ const addBookmark = AsyncHandler(async (req, res) => {
   await user.save();
   return res.status(201).json({
     message: "Bookmark added.",
-    bookmarks: user.bookmarks
+    bookmarks: user.bookmarks,
   });
 });
+
 
 
 const getBookmarks = AsyncHandler(async (req, res) => {
@@ -44,7 +47,7 @@ const deleteBookmark = AsyncHandler(async (req, res) => {
 
   const originalLength = user.bookmarks.length;
   user.bookmarks = user.bookmarks.filter(
-    (b) => b._id.toString() !== bookmarkId
+    (bookmark) => bookmark.data.id.toString() !== bookmarkId
   );
   if (user.bookmarks.length === originalLength) {
     return res.status(404).json({ message: "Bookmark not found." });
