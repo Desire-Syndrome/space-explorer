@@ -52,7 +52,7 @@ export const deleteBookmarkAction = (bookmarkId) => async (dispatch, getState) =
 
     const userInfo = getState().userLoginReducer.userInfo;
     if (!userInfo || !userInfo.token) {
-      throw new Error("User not authenticated");
+      throw new Error("User not authenticated ");
     }
 
     const config = {

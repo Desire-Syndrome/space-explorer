@@ -38,7 +38,7 @@ const NasaEpicBookmarks = () => {
 
     {!loading && (
       <p className="mt-20 text-center text-lg md:text-2xl">
-        {error ? error : epicBookmarks.length === 0 ? "No bookmarks found ." : null}
+        {error ? error : epicBookmarks.length === 0 ? "No bookmarks found." : null}
       </p>
     )}
 
