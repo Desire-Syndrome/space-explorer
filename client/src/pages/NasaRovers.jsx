@@ -6,8 +6,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { nasaRoversAction } from "../redux/actions/nasaActions";
-import { getBookmarksAction } from "../redux/actions/bookmarkActions";
+import { nasaRoversAction } from "../redux/actions/NasaActions";
+import { getBookmarksAction } from "../redux/actions/BookmarkActions";
 
 import Layouts from "../layouts/Layouts";
 import NasaRoversCard from "../components/NasaRoversCard";

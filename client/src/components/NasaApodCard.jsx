@@ -3,7 +3,7 @@ import { assetsImages } from "../assets/images-data";
 import { useState, useEffect } from "react";
 
 import { useDispatch } from "react-redux";
-import { addBookmarkAction, deleteBookmarkAction } from "../redux/actions/bookmarkActions"
+import { addBookmarkAction, deleteBookmarkAction } from "../redux/actions/BookmarkActions"
 
 
 const NasaApodCard = ({ item, userInfo, bookmarks }) => {

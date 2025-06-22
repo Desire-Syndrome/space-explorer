@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getBookmarksAction } from "../../redux/actions/bookmarkActions";
+import { getBookmarksAction } from "../../redux/actions/BookmarkActions";
 
 import NasaRoversCard from "../../components/NasaRoversCard";
 

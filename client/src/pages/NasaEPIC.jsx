@@ -6,8 +6,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { nasaEpicAction } from "../redux/actions/nasaActions";
-import { getBookmarksAction } from "../redux/actions/bookmarkActions";
+import { nasaEpicAction } from "../redux/actions/NasaActions";
+import { getBookmarksAction } from "../redux/actions/BSookmarkActions";
 
 import Layouts from "../layouts/Layouts";
 import NasaEpicCard from "../components/NasaEpicCard";

@@ -3,8 +3,8 @@ import { assetsImages } from '../assets/images-data'
 import { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { nasaApodAction } from "../redux/actions/nasaActions";
-import { getBookmarksAction } from "../redux/actions/bookmarkActions";
+import { nasaApodAction } from "../redux/actions/NasaActions";
+import { getBookmarksAction } from "../redux/actions/BookmarkActions";
 
 import Layouts from "../layouts/Layouts";
 import NasaApodCard from "../components/NasaApodCard";
