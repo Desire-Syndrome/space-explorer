@@ -33,5 +33,5 @@ This project integrates three NASA API endpoints:
 2) Mars Rovers – view photos from Mars by Martian sol (mission day) and filter by camera.
 3) EPIC (Earth Polychromatic Imaging Camera) – explore daily Earth images by date.
 
-Users can register an account to save their favorite NASA posts as bookmarks (stored in our database), 
-update their profile information, and upload a custom avatar.
+User can register an account to save his favorite NASA posts as bookmarks (stored in project database), 
+update profile information, and upload a custom avatar.
