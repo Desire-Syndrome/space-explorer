@@ -14,6 +14,9 @@ npm install -D tailwindcss@^3.4.17 postcss autoprefixer
 npx tailwindcss init -p
 npm install flowbite flowbite-react
 
+Add .env file with:
+VITE_BACKEND_URL = http://localhost:3000
+
 run client: npm run dev
 
 
