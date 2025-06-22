@@ -20,22 +20,22 @@ function App() {
   const userLoginReducer = useSelector((state) => state.userLoginReducer);
   const { userInfo } = userLoginReducer;
 
-  
+
   return (
 
     <Router>
       <UseScrollToTop />
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
-        <Route exact path="/user" element={userInfo ? <UserDashboard/> : <Navigate to="/" />}>
-           <Route exact path='bookmarks/earth-from-space' element={<NasaEpicBookmarks />} />
-           <Route exact path='bookmarks/picture-of-the-day' element={<NasaApodBookmarks />} />
-           <Route exact path='bookmarks/rover-photos' element={<NasaRoversBookmark />} />
-           <Route exact path='edit-profile' element={<EditProfile />} />
+        <Route exact path="/user" element={userInfo ? <UserDashboard /> : <Navigate to="/" />}>
+          <Route exact path='bookmarks/earth-from-space' element={<NasaEpicBookmarks />} />
+          <Route exact path='bookmarks/picture-of-the-day' element={<NasaApodBookmarks />} />
+          <Route exact path='bookmarks/rover-photos' element={<NasaRoversBookmark />} />
+          <Route exact path='edit-profile' element={<EditProfile />} />
         </Route>
-         <Route exact path='/earth-from-space' element={<NasaEPIC />} />
-         <Route exact path='/picture-of-the-day' element={<NasaAPOD />} />
-         <Route exact path='/rover-photos' element={<NasaRovers />} />
+        <Route exact path='/earth-from-space' element={<NasaEPIC />} />
+        <Route exact path='/picture-of-the-day' element={<NasaAPOD />} />
+        <Route exact path='/rover-photos' element={<NasaRovers />} />
       </Routes>
     </Router>
 

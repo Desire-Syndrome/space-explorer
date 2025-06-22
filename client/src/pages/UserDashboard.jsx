@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { userLogoutAction } from "../redux/actions/UserActions"
 
 import UserMenu from '../components/UserMenu'
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 
 const UserDashboard = () => {
@@ -78,6 +79,7 @@ const UserDashboard = () => {
 				</div>
 			</div>
 
+			<ScrollToTopButton />
 		</div>
 
 	)

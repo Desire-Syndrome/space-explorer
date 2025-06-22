@@ -36,12 +36,14 @@ const EditProfile = () => {
 			setSuccessMessage("User profile updated.");
 			setTimeout(() => {
 				setSuccessMessage("");
+				setOldPassword(""); setNewPassword("");
 				dispatch({ type: "USER_UPDATE_RESET" });
 			}, 3000);
 		} else if (updateError) {
 			setErrorMessage(updateError);
 			setTimeout(() => {
 				setErrorMessage("");
+				setOldPassword(""); setNewPassword("");
 				dispatch({ type: "USER_UPDATE_RESET" });
 			}, 3000);
 		}
@@ -101,16 +103,16 @@ const EditProfile = () => {
 
 			<div className='w-full max-w-xl mt-4'>
 				<p className='mb-2'>Name</p>
-				<input onChange={e => setName(e.target.value)} value={name} type="text" placeholder="Name..." className='w-full max-w-3xl py-2 border-2 border-gray-300 placeholder-gray-400 text-sm lg:text-base' />
+				<input onChange={e => setName(e.target.value)} value={name} type="text" placeholder="Name" className='w-full max-w-3xl py-2 border-2 border-gray-300 placeholder-gray-400 text-sm lg:text-base' />
 			</div>
 			<div className='w-full max-w-xl'>
 				<p className='mb-2'>Email</p>
-				<input onChange={e => setEmail(e.target.value)} value={email} type="email" placeholder="Email..." className='w-full max-w-3xl py-2 border-2 border-gray-300 placeholder-gray-400 text-sm lg:text-base' />
+				<input onChange={e => setEmail(e.target.value)} value={email} type="email" placeholder="Email" className='w-full max-w-3xl py-2 border-2 border-gray-300 placeholder-gray-400 text-sm lg:text-base' />
 			</div>
 			<div className='w-full max-w-xl'>
 				<p className='mb-2'>Password</p>
 				<input onChange={e => setOldPassword(e.target.value)} value={oldPassword} type="password" placeholder="Old password" className='w-full max-w-3xl py-2 border-2 border-gray-300 placeholder-gray-400 text-sm lg:text-base' />
-				<input onChange={e => setNewPassword(e.target.value)} value={newPassword} type="text" placeholder="New password..." className='w-full max-w-3xl py-2 mt-2 border-2 border-gray-300 placeholder-gray-400 text-sm lg:text-base' />
+				<input onChange={e => setNewPassword(e.target.value)} value={newPassword} type="text" placeholder="New password" className='w-full max-w-3xl py-2 mt-2 border-2 border-gray-300 placeholder-gray-400 text-sm lg:text-base' />
 			</div>
 
 			<div className='w-full max-w-xl'>

@@ -1,7 +1,7 @@
-import {combineReducers, createStore, applyMiddleware} from "redux";
+import { combineReducers, createStore, applyMiddleware } from "redux";
 import storage from "redux-persist/lib/storage";
-import {persistStore, persistReducer} from "redux-persist";
-import {thunk} from "redux-thunk";
+import { persistStore, persistReducer } from "redux-persist";
+import { thunk } from "redux-thunk";
 
 const persistConfig = {
 	key: 'root',
@@ -19,10 +19,10 @@ import {
 	bookmarkAddReducer, bookmarkRemoveReducer, bookmarksGetReducer
 } from "./reducers/BookmarkReducer";
 
-const rootReducer = combineReducers({ 
-	 userRegisterReducer, userLoginReducer, userUpdateReducer, userRemoveReducer,
-	 nasaEpicReducer, nasaApodReducer, nasaRoversReducer,
-	 bookmarkAddReducer, bookmarkRemoveReducer, bookmarksGetReducer
+const rootReducer = combineReducers({
+	userRegisterReducer, userLoginReducer, userUpdateReducer, userRemoveReducer,
+	nasaEpicReducer, nasaApodReducer, nasaRoversReducer,
+	bookmarkAddReducer, bookmarkRemoveReducer, bookmarksGetReducer
 });
 
 

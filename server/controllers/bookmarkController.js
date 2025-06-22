@@ -10,7 +10,7 @@ const addBookmark = AsyncHandler(async (req, res) => {
   }
 
   const isDuplicate = user.bookmarks.some(
-    (bookmark) => bookmark.type === type &&  bookmark.data.id.toString()  === data.id
+    (bookmark) => bookmark.type === type && bookmark.data.id.toString() === data.id
   );
 
   if (isDuplicate) {
@@ -29,7 +29,7 @@ const addBookmark = AsyncHandler(async (req, res) => {
 
 const getBookmarks = AsyncHandler(async (req, res) => {
   const user = req.account;
-  
+
   return res.status(200).json({
     message: "Bookmarks received.",
     bookmarks: user.bookmarks

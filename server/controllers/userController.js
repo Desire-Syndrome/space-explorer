@@ -13,13 +13,22 @@ const userRegistration = AsyncHandler(async (req, res) => {
   if (!name || !email || !password) {
     return res.status(400).json({ message: "Missing details." });
   }
+
   const existUser = await User.findOne({ email });
   if (existUser) {
     return res.status(400).json({ message: "User already exists." });
   }
+
   if (password.length < 6) {
     return res.status(400).json({ message: "Password must be at least 6 characters long." });
   }
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d).+$/;
+  if (!passwordRegex.test(password)) {
+    return res.status(400).json({
+      message: "Password must contain at least one uppercase letter and one number."
+    });
+  }
+
   let avatarPath = null;
   if (req.files?.avatar && req.files.avatar.length > 0) {
     avatarPath = await saveUploadedFile(req.files.avatar[0], "avatar");
@@ -72,6 +81,12 @@ const updateUser = AsyncHandler(async (req, res) => {
       }
       if (newPassword.length < 6) {
         return res.status(400).json({ message: "Password must be at least 6 characters long." });
+      }
+      const passwordRegex = /^(?=.*[A-Z])(?=.*\d).+$/;
+      if (!passwordRegex.test(newPassword)) {
+        return res.status(400).json({
+          message: "Password must contain at least one uppercase letter and one number."
+        });
       }
       const isMatch = await user.matchPassword(oldPassword);
       if (!isMatch) {

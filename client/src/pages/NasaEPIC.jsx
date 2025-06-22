@@ -28,11 +28,11 @@ function NasaEPIC() {
   const [date, setDate] = useState("");
 
 
-    useEffect(() => {
-      if (userInfo) {
-        dispatch(getBookmarksAction());
-      }
-    }, [dispatch, userInfo]);
+  useEffect(() => {
+    if (userInfo) {
+      dispatch(getBookmarksAction());
+    }
+  }, [dispatch, userInfo]);
 
   useEffect(() => {
     const fetchLatestDate = async () => {
