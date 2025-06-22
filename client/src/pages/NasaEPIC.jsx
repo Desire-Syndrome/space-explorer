@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { nasaEpicAction } from "../redux/actions/NasaActions";
-import { getBookmarksAction } from "../redux/actions/BSookmarkActions";
+import { getBookmarksAction } from "../redux/actions/BookmarkActions";
 
 import Layouts from "../layouts/Layouts";
 import NasaEpicCard from "../components/NasaEpicCard";
