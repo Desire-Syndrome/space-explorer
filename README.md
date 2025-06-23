@@ -14,7 +14,9 @@ update profile information, and upload a custom avatar.
 SERVER Install:
 
 npm init -y
+
 npm install express express-async-handler nodemon jsonwebtoken bcryptjs mongoose cors multer dotenv axios
+
 npm install --save-dev cross-env
 
 run server: npm start
@@ -38,6 +40,7 @@ npx tailwindcss init -p
 npm install flowbite flowbite-react
 
 Add .env file with:
+
 VITE_BACKEND_URL = http://localhost:3000
 
 run client: npm run dev
