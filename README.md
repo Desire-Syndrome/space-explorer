@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////
+-----------------------
 
 This project integrates three NASA API endpoints:
 
@@ -9,7 +9,7 @@ This project integrates three NASA API endpoints:
 User can register an account to save his favorite NASA posts as bookmarks (stored in project database), 
 update profile information, and upload a custom avatar.
 
-//////////////////////////////////////////////////////////////
+-----------------------
 
 SERVER Install:
 
@@ -24,7 +24,7 @@ run server: npm start
 
 run tests: npm test
 
-//////////////////////////////////////////////////////////////
+-----------------------
 
 CLIENT Install:
 
