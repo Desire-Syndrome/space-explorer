@@ -12,7 +12,7 @@ afterAll(closeDatabase);
 afterEach(clearDatabase);
 
 
-describe('User Registration', () => {
+describe('Register User', () => {
 
 	it('fail: Missing details', async () => {
 		const res = await request(app).post('/api/user/registration').send({});
@@ -69,7 +69,7 @@ describe('User Registration', () => {
 });
 
 
-describe('User Login', () => {
+describe('Login User', () => {
 	beforeEach(async () => {
 		await request(app).post('/api/user/registration').send({
 			name: 'Test User',
@@ -110,7 +110,7 @@ describe('User Login', () => {
 });
 
 
-describe('User Update', () => {
+describe('Update User', () => {
 	let token;
 	beforeEach(async () => {
 		await request(app).post('/api/user/registration').send({
@@ -196,7 +196,7 @@ describe('User Update', () => {
 });
 
 
-describe('User Delete', () => {
+describe('Delete User', () => {
 	let token;
 	beforeEach(async () => {
 		await request(app).post('/api/user/registration').send({
