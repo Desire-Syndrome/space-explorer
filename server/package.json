@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "cross-env NODE_ENV=test jest --verbose",
     "start": "nodemon server.js"
   },
   "keywords": [],
