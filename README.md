@@ -15,8 +15,10 @@ SERVER Install:
 
 npm init -y
 npm install express express-async-handler nodemon jsonwebtoken bcryptjs mongoose cors multer dotenv axios
+npm install --save-dev cross-env
 
 run server: npm start
+run tests: npm test
 
 //////////////////////////////////////////////////////////////
 
