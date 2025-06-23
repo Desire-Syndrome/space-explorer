@@ -31,3 +31,15 @@ app.use('/api/nasa', nasaRoutes);
 const PORT = process.env.PORT || 3000; 
 connectDB(); 
 app.listen(PORT, () => console.log(`server listening on port ${PORT}`))
+
+
+// Global error handler
+app.use((err, req, res, next) => {
+  const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
+  res.status(statusCode).json({
+    message: err.message || 'Server Error',
+  });
+});
+
+
+module.exports = app;
