@@ -19,7 +19,7 @@ npm install express express-async-handler nodemon jsonwebtoken bcryptjs mongoose
 
 npm install --save-dev cross-env
 
-
+-----------------------
 run server: npm start
 
 run tests: npm test
@@ -40,9 +40,10 @@ npx tailwindcss init -p
 
 npm install flowbite flowbite-react
 
+-----------------------
 Add .env file with:
 
 VITE_BACKEND_URL = http://localhost:3000
 
-
+-----------------------
 run client: npm run dev
