@@ -18,6 +18,7 @@ npm install express express-async-handler nodemon jsonwebtoken bcryptjs mongoose
 npm install --save-dev cross-env
 
 run server: npm start
+
 run tests: npm test
 
 //////////////////////////////////////////////////////////////
