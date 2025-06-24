@@ -36,6 +36,7 @@ function App() {
         <Route exact path='/earth-from-space' element={<NasaEPIC />} />
         <Route exact path='/picture-of-the-day' element={<NasaAPOD />} />
         <Route exact path='/rover-photos' element={<NasaRovers />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
 
